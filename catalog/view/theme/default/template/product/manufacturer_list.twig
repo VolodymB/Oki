@@ -1,0 +1,141 @@
+{{ header }}
+<div id="product-manufacturer" class="wrapper">
+  <!-- main-wrap -->
+	<div class="wrapper">
+		<!-- fabric -->
+		<section class="fabric colored-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="fabric-text-wrap">
+							<h1 class="title">{{fabric_title}}</h1>
+							<p class="fabric-text">{{fabtic_text}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- mehanizm -->
+		<section class="mehanizm">
+			<div class="container">
+				<h2 class="title title_center">{{mechanisms_of_transformation.name}}</h2>
+				<div class="mehanizm-list-wrap">
+					<ul class="mehanizm-list">
+          {% for filter_item in mechanisms_of_transformation.filters  %}
+						<li class="mehanizm-item">
+							<span class="mehanizm-item-counter"></span>
+							<p class="mehanizm-item-title">{{filter_item.name}}</p>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- rules -->
+		<section class="rules">
+			<div class="container">
+				<div class="rules-wrap">
+					<h2 class="title title_center">{{fabric_rules}}</h2>
+					<div class="rules-list">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="rules-item">
+									<span class="rules-item-counter"></span>
+									<p class="rules-item-text">{{fabric_rules_1}}</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="rules-item">
+									<span class="rules-item-counter"></span>
+									<p class="rules-item-text">Встановити виріб на рівну підлогу, щоб уникнути перекосів. Якщо підлога нерівна, зробити підкладки під основу меблів;</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="rules-item">
+									<span class="rules-item-counter"></span>
+									<p class="rules-item-text">Поцікавитися про особливості трансформації у представника фабрики. Періодично слід підтягувати та змащувати гвинтові та різьбові з’єднання, особливо як чути рипіння. Це – нормально для будь-якого механізму, навіть найякіснішого.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- upholstery -->
+		<section class="upholstery">
+			<div class="container">
+				<!-- left -->
+				<div class="row">
+					<div class="col-md-6">
+						<h2 class="title">{{fabric_cloth_title}}</h2>
+						<div class="upholstery-text-wrap">
+							<p class="upholstery-text">{{fabric_cloth_text_1}}</p>
+							<p class="upholstery-text">{{fabric_cloth_text_2}}</p>
+							<p class="upholstery-text">{{fabric_cloth_text_3}}</p>
+						</div>
+					</div>
+					<!-- right -->
+					<div class="col-md-6">
+						<div class="upholstery-type">
+							<h3 class="upholstery-type-title">{{fabric_type_tytle}}</h3>
+							<ul class="upholstery-type-list">
+								<li class="upholstery-type-item">
+									<figure class="upholstery-type-item-descr">
+										<div class="upholstery-type-image-wrap">
+											<img src="./image/catalog/cloth/shenil.png" alt="Шеніл" class="upholstery-type-image">
+										</div>
+										<figcaption class="upholstery-type-text">{{fabric_type_1}}</figcaption>
+									</figure>
+								</li>
+								<li class="upholstery-type-item">
+									<figure class="upholstery-type-item-descr">
+										<div class="upholstery-type-image-wrap">
+											<img src="./image/catalog/cloth/velur.png" alt="Велюр" class="upholstery-type-image">
+										</div>
+										<figcaption class="upholstery-type-text">{{fabric_type_2}}</figcaption>
+									</figure>
+								</li>
+								<li class="upholstery-type-item">
+									<figure class="upholstery-type-item-descr">
+										<div class="upholstery-type-image-wrap">
+											<img src="./image/catalog/cloth/gobelen.png" alt="Гобелен" class="upholstery-type-image">
+										</div>
+										<figcaption class="upholstery-type-text">{{fabric_type_3}}</figcaption>
+									</figure>
+								</li>
+								<li class="upholstery-type-item">
+									<figure class="upholstery-type-item-descr">
+										<div class="upholstery-type-image-wrap">
+											<img src="./image/catalog/cloth/jakard.png" alt="Жаккард" class="upholstery-type-image">
+										</div>
+										<figcaption class="upholstery-type-text">{{fabric_type_4}}</figcaption>
+									</figure>
+								</li>
+								<li class="upholstery-type-item">
+									<figure class="upholstery-type-item-descr">
+										<div class="upholstery-type-image-wrap">
+											<img src="./image/catalog/cloth/flok.png" alt="Флок" class="upholstery-type-image">
+										</div>
+										<figcaption class="upholstery-type-text">{{fabric_type_5}}</figcaption>
+									</figure>
+								</li>
+								<li class="upholstery-type-item">
+									<figure class="upholstery-type-item-descr">
+										<div class="upholstery-type-image-wrap">
+											<img src="./image/catalog/cloth/kojzam.png" alt="Шкірозамінник" class="upholstery-type-image">
+										</div>
+										<figcaption class="upholstery-type-text">{{fabric_type_6}}</figcaption>
+									</figure>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="upholstery-btn">
+					<a href="{{catalog}}" class="bttn">{{fabric_goods}}</a>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+{{ footer }}

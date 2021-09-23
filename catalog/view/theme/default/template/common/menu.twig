@@ -1,0 +1,37 @@
+<!-- header-menu -->
+				<nav class="menu-nav">
+					<ul class="menu-nav-list">
+						<li class="menu-nav-item is-active">
+							<a href="{{about}}" class="menu-nav-link">{{text_about}}</a>
+						</li>
+						<li class="menu-nav-item">
+							<a href="{{manufacturer}}" class="menu-nav-link">{{text_manufacturer}}</a>
+						</li>
+            {% if categories %}
+						<li class="menu-nav-item">
+							<a href="{{catalog}}" class="menu-nav-link">{{text_catalog}}</a>
+							<ul class="menu-nav-list_sub">
+              {% for category in categories %}
+								<li class="menu-nav-item_sub">
+									<a href="{{ category.href }}" class="menu-nav-link_sub">{{ category.name }}</a>
+								</li>
+                {% endfor %}
+								<li class="menu-nav-item_sub menu-nav-item_sub--sales">
+							<a href="{{special}}" class="menu-nav-link_sub">{{text_special}}</a>
+								</li>
+							</ul>
+						</li>
+            {% endif %}
+						<li class="menu-nav-item">
+							<a href="{{affiliate}}" class="menu-nav-link">{{text_affiliate}}</a>
+						</li>
+						<li class="menu-nav-item">
+							<a href="{{delivery}}" class="menu-nav-link">{{text_delivery}}</a>
+						</li>
+						<li class="menu-nav-item">
+							<a href="{{ contact }}" class="menu-nav-link">{{ text_contact }}</a>
+						</li>
+            
+					</ul>
+				</nav>
+        

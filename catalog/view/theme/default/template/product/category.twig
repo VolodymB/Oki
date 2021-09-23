@@ -1,0 +1,113 @@
+{{ header }}
+<div class="wrapper">
+		<div class="page-content">
+			<div class="container">
+				<div class="row">
+				<!-- filter -->
+					<div class="col-md-3 col-sm-4">
+						{{ filter }}
+						
+					</div>
+					<!-- content -->
+					<div class="col-md-9 col-sm-8">
+						<main class="content">
+							<!-- title -->
+							<div class="title-wrap">
+								<h1 class="title title_main">Дивани</h1>
+							</div>
+							<!-- product-list -->
+							<div class="product-sort-wrap">
+								<div class="row">
+									<div class="col-md-8">
+										<div class="breadcrumbs">
+											<ul class="breadcrumbs-list">
+                      {% for breadcrumb in breadcrumbs %}
+												<li class="breadcrumbs-item">
+													<a href="{{ breadcrumb.href }}" class="breadcrumbs-item-link">{{ breadcrumb.text }}</a>
+													<span class="icon icon-keyboard_arrow_right"></span>
+												</li>
+                      {% endfor %}
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="select-wrap">
+											<select id="input-sort" name="order" class="input input_select" onchange="location = this.value;">
+													{% for sorts in sorts %}
+              {% if sorts.value == '%s-%s'|format(sort, order) %}
+              
+              
+              
+              <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+              
+              
+              
+              {% else %}
+              
+              
+              
+              <option value="{{ sorts.href }}">{{ sorts.text }}</option>
+              
+              
+              
+              {% endif %}
+              {% endfor %}
+												</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-list-wrap">
+								<div class="row">
+									<!-- product item -->
+                  {% for product in products %}
+									<div class="product-layout col-lg-4 col-md-6 col-sm-12 col-xs-12">
+										<figure class="product-item">
+											<div class="product-image">
+												<a href="{{ product.href }}" class="product-image-link">
+													<img src="{{ product.thumb }}" alt="{{ product.name }}">
+												</a>
+											</div>
+											<figcaption class="product-text-wrap">
+												<div class="product-name">
+													<h3 class="product-title">
+														<a href="{{ product.href }}" class="product-title-link">{{ product.name }}</a>
+													</h3>
+													<span class="product-category">{{ category.name }}</span>
+												</div>
+                        {% if product.price %}
+												<div class="product-price">
+                          {% if product.special %}
+													<p class="product-price-sale">
+														<span class="price-sale_old">{{product.price}}</span>
+														<span class="price-sale_date">{{product.date_end}}</span>
+													</p>
+													<p class="product-price-active">
+														<span>{{ product.special }}</span>
+													</p>
+                          {% else %}
+                          <p class="purchase-price-active">
+												<span>{{ product.price }}</span>
+											</p>
+                      {% endif %}
+												</div>
+                        {% endif %}
+												<div class="product-buy">
+													<a href="#" class="bttn">
+														<span class="icon icon-add_shopping_cart"></span>
+														<span>Придбати</span>
+													</a>
+													<a href="#" class="product-add-fav">
+														<span class="icon icon-favorite_border is-active"></span>
+													</a>
+												</div>
+											</figcaption>
+										</figure>
+									</div>
+                  {% endfor %}
+							</div>
+  </div> 
+     </div> 
+        </div>
+          </div>           
+{{ footer }} 

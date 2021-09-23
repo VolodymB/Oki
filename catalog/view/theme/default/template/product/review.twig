@@ -1,0 +1,17 @@
+{% if reviews %}
+{% for review in reviews %}
+<div class="coments-item">
+		<div class="coments-item-title">
+			<span class="coments-item-title_name">{{ review.author }}</span>
+			<span class="coments-item-title_date">{{ review.date_added }}</span>
+		</div>
+		<p class="coments-item-text">{{ review.text }}</p>
+	</div>
+{% endfor %}
+<div class="row">
+  <div class="col-sm-6 text-left">{{ pagination }}</div>
+  <div class="col-sm-6 text-right">{{ results }}</div>
+</div>
+{% else %}
+<p class="coments-empty">{{ text_no_reviews }}</p>
+{% endif %}

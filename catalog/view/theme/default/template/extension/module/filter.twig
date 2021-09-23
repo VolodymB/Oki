@@ -1,0 +1,49 @@
+
+    <aside class="filter-wrap">
+        <div id="main-filter" class="filter">
+            <!-- add here checked labels -->
+
+            <!-- end checked labels -->
+            <div class="filter-list">
+            {% for filter_group in filter_groups %}
+                <!-- filter item -->
+                <div class="filter-item">
+                    <div class="filter-item-head">
+                        <p class="filter-item-title">{{ filter_group.name }}</p>
+                    </div>
+                    <!-- type furniture -->
+                    <div class="filter-item-content">
+                        <ul class="check-box">
+                            <ul class="check-box">
+											{% for filter in filter_group.filter %}
+												<li>
+													<input type="checkbox" name="filter[]" id="filter{{filter.filter_id}}" class="input_checkbox" value="{{filter.filter_id}}" {% if filter.filter_id in filter_active %}checked{% endif %}>
+													<label for="filter{{filter.filter_id}}" class="input_label-checkbox">{{filter.name}}</label>
+												</li>
+												{% endfor %}
+											</ul>
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="panel-footer text-right">
+    <button type="button" id="button-filter" class="btn btn-primary">{{ button_filter }}</button>
+  </div>
+        <button class="bttn_small bttn_filter">
+            <span>Показати фільтр</span>
+            <span class="hidden">Сховати фільтр</span>
+        </button>
+    </aside>
+    <script type="text/javascript"><!--
+$('#button-filter').on('click', function() {
+	filter = [];
+
+	$('input[name^=\'filter\']:checked').each(function(element) {
+		filter.push(this.value);
+	});
+
+	location = '{{ action }}&filter=' + filter.join(',');
+});
+//--></script> 

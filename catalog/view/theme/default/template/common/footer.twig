@@ -1,0 +1,20 @@
+<footer>
+		<p class="footer-text">{{ powered }}</p>
+</footer>
+{% for style in styles %}
+<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+{% endfor %}
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+<!-- Scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="catalog/view/javascript/owl-carousel/owl.carousel.min.js"></script>
+	<script src="catalog/view/javascript/slick-slider/slick.min.js"></script>
+	<script src="catalog/view/javascript/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="catalog/view/javascript/main.js"></script>
+</body></html>
